@@ -146,6 +146,20 @@ section{
     padding: 100px 0;
 }
 
+.about, .services, .skills, .teams, .contact{
+    font-family: 'Poppins', sans-serif;
+}
+
+.about .about-content,
+.services .serv-content,
+.skills, .skills-content, 
+.contact, .contact-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
 section .title{
     position: relative;
     font-family: 'Ubuntu' sans-serif;
@@ -178,19 +192,9 @@ section .title::after{
     transform: translateX(-50%);
 }
 /* About Section  */
-.about, .services{
-    font-family: 'Poppins', sans-serif;
-}
 
 .about .title::after{
     content: 'who i am'
-}
-
-.about .about-content .services .serv-content{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
 }
 
 .about .about-content{
@@ -248,16 +252,18 @@ section .title::after{
 }
 
 /* Services Section Styling */
-.services{
+.services, .teams{
     color: #fff;
     background: #111;
 }
 
-.services .title::before{
+.services .title::before,
+.teams .title::before{
     background: #fff;
 }
 
-.services .title::after{
+.services .title::after,
+.teams .title::after{
     background: #111;
     content: 'what I provide';
 }
@@ -275,6 +281,11 @@ section .title::after{
     padding: 20px 25px;
     cursor: pointer;
     margin-left: 20px;
+    transition: all 0.3s ease;
+}
+
+.services .serv-content .card:hover{
+    background: var(--sc-primary);
 }
 
 .services .serv-content .card .box{
@@ -287,7 +298,12 @@ section .title::after{
 
 .services .serv-content .card > i{
     font-size: 50px;
-    /* color: var(--sc-primary); */
+    color: var(--sc-primary);
+    transition: all 0.3s ease;
+}
+
+.services .serv-content .card:hover i{
+    background: #fff;
 }
 
 .services .serv-content .card .text{
@@ -295,6 +311,183 @@ section .title::after{
     font-weight: 500;
     margin: 10px 0 7px 0;
 }
+
+
+/* Skills section styling  */
+
+.skills .title::after{
+    content: 'what I know'
+}
+
+.skills .skills-content .column{
+    width: calc(50% - 30px)
+}
+
+.skills .skills-content .left .text{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.skills .skills-content .left p{
+    text-align: justify;
+}
+
+.skills .skills-content .left a{
+    display: inline-block;
+    background: var(--sc-primary);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 16px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid var(--sc-primary);
+    transition: all 0.3s ease;
+}
+
+.skills .skills-content .left a:hover{
+    color: var(--sc-primary);
+    background: none;
+}
+
+.skills .skills-content .right .bars{
+    margin-bottom: 15px;   
+}
+
+.skills .skills-content .right .info{
+    display: flex;
+    margin-bottom: 5px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.skills .skills-content .right span{
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.skills .skills-content .right .line{
+    height: 5px;
+    width: 100%;
+    background: lightgray;
+    position: relative;
+}
+
+.skills .skills-content .right .line::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: var(--sc-primary);
+}
+
+.skills .skills-content .right .html::before{
+    width: 90%;
+}
+.skills .skills-content .right .css::before{
+    width: 70%;
+}
+.skills .skills-content .right .js::before{
+    width: 60%;
+}
+
+/* Teams Section Styling  */
+.teams .title::after{
+    content: 'who works with me'
+}
+
+.teams .carousel .card{
+    background: #222;
+    border-radius: 6px;
+    padding: 25px 35px;
+    text-align: center;
+}
+
+.teams .carousel .card:hover{
+    background: var(--sc-primary);
+}
+
+.teams .carousel .card .box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.teams .carousel .card:hover .box{
+    transform: scale(1.05);
+}
+
+.teams .carousel .card .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+}
+
+.teams .carousel .card img{
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--sc-primary);
+    transition: all 0.3s ease;
+}
+
+.teams .carousel .card:hover img{
+    border: #fff;
+}
+
+.owl-dots{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.owl-dot{
+    height: 13px;
+    width: 13px;
+    outline: none!important;
+    border-radius: 50%;
+    border: 2px solid var(--sc-primary)!important;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+}
+
+.owl-dot.active{
+    width: 35px;
+    border-radius: 14px;
+}
+
+.owl-dot.active,
+.owl-dot:hover{
+    background: var(--sc-primary)!important;
+}
+
+/* Contact Section Styling */
+.contact .title::after{
+    content:'get in touch';
+}
+
+.contact .contact-content .column {
+    width: calc(50% - 30px)
+}
+
+.contact .contact-content .text{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.contact .contact-content .left p{
+    text-align: justify;
+}
+
+.contact .contact-content .left .icons{
+    
+}
+
 
 /* Responsive Media Query Section  */
 @media (max-width: 1300px){
@@ -376,13 +569,13 @@ section .title::after{
         width: 100%;
     }
 
-    .about .about-content .column .left{
+    .about .about-content .left{
         display: flex;
         justify-content: center;
         margin: 0 auto 60px
     }
 
-    .about .about-content .column .right{
+    .about .about-content .right{
         flex: 100%;
     }
 
@@ -391,6 +584,15 @@ section .title::after{
         background: none;
     }
 
+    .services .serv-content .card{
+        width: calc(50% - 10px);
+        margin-bottom: 20px;
+    }
+
+    .skills .skills-content .column{
+        width: 100%;
+        margin-bottom: 35px;
+    }
 }
 
 
@@ -409,6 +611,11 @@ section .title::after{
 
     .home .home-content a{
         font-size: 20px;
+    }
+
+    .services .serv-content .card,
+    .skills .skills-content .column{
+        width: 100%;
     }
 }
 
