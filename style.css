@@ -6,7 +6,11 @@
     --ff-secondary: Poppins, sans-serif;
 
     /* site color theme */
-    --sc-primary: rgb(222, 28, 28);
+    --sc-primary: rgb(206 7 7);;
+}
+
+html{
+    scroll-behavior: smooth;
 }
 
 * {
@@ -63,6 +67,7 @@
 }
 
 .navbar .menu li a{
+    display: block;
     color: #fff;
     font-size: 18px;
     font-weight: 500;
@@ -86,6 +91,29 @@
     display: none;
 }
 
+.scroll-up-btn{
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background: var(--sc-primary);
+    right: 30px;
+    bottom: 10px;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    z-index: 9999;
+    font-size: 30px;
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: 100;
+    transition: all 0.1s ease;
+}
+
+.scroll-up-btn.show{
+    bottom: 30px;
+    opacity: 0;
+    pointer-events: none;
+}
 
 /* Home Section Styling */
 .home{
@@ -146,14 +174,18 @@ section{
     padding: 100px 0;
 }
 
-.about, .services, .skills, .teams, .contact{
+.about, .services, .skills, .teams, .contact, footer, .my-work{
     font-family: 'Poppins', sans-serif;
+}
+
+.about, .contact, .skills{
+    background-color: #ededed;
 }
 
 .about .about-content,
 .services .serv-content,
 .skills, .skills-content, 
-.contact, .contact-content{
+.contact, .contact-content, .my-work{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -194,7 +226,8 @@ section .title::after{
 /* About Section  */
 
 .about .title::after{
-    content: 'who i am'
+    content: 'who i am';
+    background-color: #ededed;
 }
 
 .about .about-content{
@@ -213,6 +246,12 @@ section .title::after{
     width: 400px;
     object-fit: cover;
     border-radius: 6px;
+}
+
+.right > img{
+    position: absolute;
+    width: 15em;
+    margin-left: 4em;
 }
 
 .about .about-content .right{
@@ -249,6 +288,68 @@ section .title::after{
 .about .about-content .right a:hover{
     color: var(--sc-primary);
     background: none;
+}
+
+/* Portfolio section styling  */
+.my-work {
+    background-color: #03060b;
+    color: #fff;
+    text-align: center;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.my-work .title::after{
+    position: absolute;
+    padding: 5px;
+    font-size: 20px;
+    color: var(--sc-primary);
+    /* background: #fff; */
+    bottom: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.my-work .title::after{
+    content: 'what I can do';
+    background-color: #03060c;
+}
+
+.my-work .title::before{
+    background-color: #fff;
+}
+
+.portfolio {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 35em;
+}
+
+.portfolio__item {
+    overflow: hidden;
+}
+
+.portfolio__img {
+    transition: transform 750ms cubic-bezier(.5, 0, .5, 1),
+    opacity 250ms linear;
+}
+
+.portfolio__item:focus {
+    position:relative;
+    z-index: 2;
+}
+
+.portfolio__title {
+    text-align: center;
+    padding: 2em 0 1em 0;
+}
+
+.portfolio__img:hover, 
+.portfolio__item:focus .portfolio__img {
+    transform: scale(1.2);
+    opacity: .75;
 }
 
 /* Services Section Styling */
@@ -316,7 +417,8 @@ section .title::after{
 /* Skills section styling  */
 
 .skills .title::after{
-    content: 'what I know'
+    content: 'what I know';
+    background-color: #ededed;
 }
 
 .skills .skills-content .column{
@@ -391,6 +493,12 @@ section .title::after{
 }
 .skills .skills-content .right .js::before{
     width: 60%;
+}
+.skills .skills-content .right .photoshop::before{
+    width: 70%;
+}
+.skills .skills-content .right .premierpro::before{
+    width: 65%;
 }
 
 /* Teams Section Styling  */
@@ -468,6 +576,7 @@ section .title::after{
 /* Contact Section Styling */
 .contact .title::after{
     content:'get in touch';
+    background-color: #ededed;
 }
 
 .contact .contact-content .column {
@@ -485,10 +594,116 @@ section .title::after{
 }
 
 .contact .contact-content .left .icons{
-    
+    margin: 10px 0;
+
+}
+
+.contact .contact-content .row{
+    display: flex;
+    height: 65px;
+    align-items: center;
+}
+
+.contact .contact-content .row .info{
+    margin-left: 30px;
+}
+
+.contact .contact-content .row i{
+    font-size: 25px;
+    color: var(--sc-primary);
+}
+
+.contact .contact-content .info .head{
+    font-weight: 500;
+}
+
+.contact .contact-content .info .sub-title{
+    color: #333;
+}
+
+.contact .right form .fields{
+    display: flex;
+}
+
+.contact .right form .field,
+.contact .right form .fields .field{
+    height: 45px;
+    width: 100%;   
+    margin-bottom: 15px;
+}
+
+.contact .right form .textarea{
+    height: 80px;
+    width: 100%;
 }
 
 
+.contact .right form .name{
+    margin-right: 10px;
+}
+
+.contact .right form .email{
+    margin-left: 10px;
+}
+
+.contact .right form .field input,
+.contact .right form .textarea textarea{
+    height: 100%;
+    width: 100%;
+    border: 1px solid lightgray;
+    border-radius: 6px;
+    outline: none;
+    padding: 0 15px;
+    font-size: 17px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.contact .right form .textarea textarea{
+    padding-top: 10px;
+    resize: none;
+}
+
+.contact .right form .button{
+    height: 47px;
+    width: 170px;
+}
+
+.contact .right form .button button{
+    height: 100%;
+    width: 100%;
+    border: 2px solid var(--sc-primary);
+    background: var(--sc-primary);
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 6px;   
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact .right form .button button:hover{
+    color: var(--sc-primary);
+    background: none;
+}
+
+/* Footer Section Styling  */
+footer{
+    background: #111;
+    padding: 20px 23px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer span a{
+    color: var(--sc-primary);
+    text-decoration: none;
+}
+
+footer span a:hover{
+    text-decoration: underline;
+}
 /* Responsive Media Query Section  */
 @media (max-width: 1300px){
     .home .max-width{
@@ -589,7 +804,8 @@ section .title::after{
         margin-bottom: 20px;
     }
 
-    .skills .skills-content .column{
+    .skills .skills-content .column,
+    .contact .contact-content .column{
         width: 100%;
         margin-bottom: 35px;
     }

@@ -5,7 +5,26 @@ $(document).ready(function(){
         }else{
             $('.navbar').removeClass("sticky");
         }
+        if(this.scroll > 500){
+            $('.scroll-up-btn').addClass("show");
+        }else{
+            $('.scroll-up-btn').removeClass("show");
+        }
     });
+
+    // Slide up script
+    $('.scroll-up-btn').click(function(){
+        $('html').animate({scrollTop: 0});
+    });
+
+    //Typing animation script
+    let typed = new Typed('.typing', {
+        strings: ['Web Developer', 'Cinematographer', 'Writer', 'Artist', 'Creator'],
+        typeSpeed: 100,
+        backSpeed: 60,
+        loop: true,
+    })
+
     // toggle menu/navbar script
     $('.menu-btn').click(function(){
         $('.navbar .menu').toggleClass("active");
