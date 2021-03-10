@@ -195,6 +195,7 @@ section{
 
 .about, .contact, .skills{
     background-color: #ededed;
+    height: 52em;
 }
 
 .about .about-content,
@@ -238,6 +239,10 @@ section .title::after{
     left: 50%;
     transform: translateX(-50%);
 }
+
+.colorRed{
+    color: rgb(245, 19, 19);
+}
 /* About Section  */
 
 .about .title::after{
@@ -266,7 +271,7 @@ section .title::after{
 .right > img{
     position: absolute;
     width: 15em;
-    margin-left: 4em;
+    margin-left: 28em;
 }
 
 .about .about-content .right{
@@ -409,8 +414,20 @@ section .title::after{
     justify-content: center;
 }
 
-.services .serv-content .card:hover{
-    background: var(--sc-primary);
+.services .serv-content .gmail:hover{
+    background: rgb(213, 29, 29);
+}
+
+.services .serv-content .linkedin:hover{
+    background: rgb(29, 50, 213);
+}
+
+.services .serv-content .github:hover{
+    background: rgb(127, 29, 213);
+}
+
+.services .serv-content .twitter:hover{
+    background: rgb(32, 172, 215);
 }
 
 .services .serv-content .card .box{
@@ -433,6 +450,44 @@ section .title::after{
     margin: 10px 0 7px 0;
 }
 
+/* Success message */
+#status{
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    padding: 10px;
+    margin: 0 auto;
+    border-radius: 8px;
+    color: green;
+}
+
+#status.success{
+    background-color: rgb(211, 250, 153);
+    margin-top: 50px;
+    animation: status 5s ease forwards;
+}
+
+#status.error{
+    background-color: rgb(250, 129, 92);
+    margin-top: 50px;
+    color: #fff;
+    animation: status 5s ease forwards;
+}
+
+@keyframes status{
+    0%{
+        opacity: 1;
+        pointer-events: all;
+    }
+    90%{
+        opacity: 1;
+        pointer-events: all;
+    }
+    100%{
+        opacity: 0;
+        pointer-events: none;
+    }
+}
 
 /* Skills section styling  */
 
