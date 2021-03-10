@@ -91,6 +91,21 @@ html{
     display: none;
 }
 
+.btn{
+    width: 8em;
+    height: 2.5em;
+    margin-top: 1em;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: #fff;
+}
+
+.fa-angle-up{
+    color: white;
+}
+
 .scroll-up-btn{
     position: fixed;
     height: 45px;
@@ -325,6 +340,8 @@ section .title::after{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     height: 35em;
+    grid-row-gap: 0.5em;
+    grid-column-gap: 0.5em;
 }
 
 .portfolio__item {
@@ -374,14 +391,18 @@ section .title::after{
     flex-direction: row;
 }
 
+.services .serv-content{
+    justify-content: space-evenly;
+}
+
 .services .serv-content .card{
-    width: calc(33% - 20px);
+    width: calc(23% - 20px);
+    height: 15em;
     background: #222;
     text-align: center;
     border-radius: 6px;
-    padding: 20px 25px;
+    padding: 20px 20px;
     cursor: pointer;
-    margin-left: 20px;
     transition: all 0.3s ease;
 }
 
@@ -401,10 +422,6 @@ section .title::after{
     font-size: 50px;
     color: var(--sc-primary);
     transition: all 0.3s ease;
-}
-
-.services .serv-content .card:hover i{
-    background: #fff;
 }
 
 .services .serv-content .card .text{
