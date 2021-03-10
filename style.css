@@ -383,7 +383,7 @@ section .title::after{
 .services .title::after,
 .teams .title::after{
     background: #111;
-    content: 'what I provide';
+    content: 'follow me';
 }
 
 .serv-content{
@@ -404,6 +404,9 @@ section .title::after{
     padding: 20px 20px;
     cursor: pointer;
     transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .services .serv-content .card:hover{
