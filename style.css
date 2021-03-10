@@ -13,6 +13,10 @@ html{
     scroll-behavior: smooth;
 }
 
+.portfolio_body{
+    background-color: #111;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -243,6 +247,25 @@ section .title::after{
 .colorRed{
     color: rgb(245, 19, 19);
 }
+
+.portfolio_hero_section{
+    width: 100vw;
+    height: fit-content;
+}
+
+.portfolio_description_section{
+    width: fit-content;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.portfolio-item-individual{
+    width: 80vw;
+    background-color: white;
+}
+
 /* About Section  */
 
 .about .title::after{
