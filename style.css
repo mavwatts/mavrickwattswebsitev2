@@ -14,7 +14,7 @@ html{
 }
 
 .portfolio_body{
-    background-color: #111;
+    background-color: #03060c;
 }
 
 * {
@@ -251,11 +251,15 @@ section .title::after{
 .portfolio_hero_section{
     width: 100vw;
     height: fit-content;
+    padding: 0;
+}
+
+.portfolio_hero_section img{
+    width: 100vw
 }
 
 .portfolio_description_section{
-    width: fit-content;
-    height: 100vh;
+    height: fit-content;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -264,6 +268,83 @@ section .title::after{
 .portfolio-item-individual{
     width: 80vw;
     background-color: white;
+}
+
+.portfolio-item-description-wrapper{
+    background-color: #03060c;
+    color: #fff;
+}
+
+.portfolio-item-description-wrapper img{
+margin: 0 auto 0 auto;
+width: 100%;
+margin: 2em 0 2em 0;
+}
+
+.portfolio-item-description{
+    width: 80vw;
+}
+
+.portfolio-item-tech-stack{
+    display: flex;    
+    flex-direction: row;
+    padding: 0;
+}
+
+.portfolio-item-tech-stack li{
+    list-style-type: none;
+   
+}
+
+.portfolio-item-tech-stack img{
+    max-width: 80px;
+    list-style-type: none; 
+    padding: 0;
+}
+
+.portfolio-item-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
+}
+
+.portfolio-item-repo-link {
+    max-width: 1000px;
+    text-transform: uppercase;
+}
+
+.portfolio-item-repo-link h4{
+    margin: 2.5em 0 0.5em 0;
+}
+
+.portfolio-item-repo-link a {
+    color: white;
+    text-decoration: none;
+}
+
+.portfolio-item-repo-link a:hover {
+    color: red;
+}
+
+.repo-link{
+    font-family: var(--ff-secondary);
+}
+
+h3{
+    font-family: var(--ff-primary);
+}
+
+li{
+    font-family: var(--ff-primary);
+    list-style: none;
+}
+
+.text{
+    color: #fff;
+}
+
+p{
+    font-family: var(--ff-secondary);
 }
 
 /* About Section  */
@@ -291,6 +372,7 @@ section .title::after{
     border-radius: 6px;
 }
 
+
 .right > img{
     position: absolute;
     width: 15em;
@@ -305,6 +387,7 @@ section .title::after{
     font-size: 25px;
     font-weight: 600;
     margin-bottom: 10px;
+    color: #111;
 }
 
 .about .about-content .right .text span{
@@ -379,6 +462,8 @@ section .title::after{
 .portfolio__img {
     transition: transform 750ms cubic-bezier(.5, 0, .5, 1),
     opacity 250ms linear;
+    height: 100%;
+    width: 90%
 }
 
 .portfolio__item:focus {
@@ -388,13 +473,26 @@ section .title::after{
 
 .portfolio__title {
     text-align: center;
-    padding: 2em 0 1em 0;
+    padding: 1em 0 3em 0;
+    background-color: #03060c;
+    color: #fff;
+    font-family: var(--ff-primary);
+    font-size: 24px;
+}
+
+.section__title--underline::after{
+    content: '';
+    display: block;
+    width: 6em;
+    height: 1px;
+    margin: 0.5em auto 1em;
+    background: #fff;
 }
 
 .portfolio__img:hover, 
 .portfolio__item:focus .portfolio__img {
     transform: scale(1.2);
-    opacity: .75;
+    opacity: .45;
 }
 
 /* Services Section Styling */
@@ -527,6 +625,7 @@ section .title::after{
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 10px;
+    color: #111;
 }
 
 .skills .skills-content .left p{
@@ -685,6 +784,7 @@ section .title::after{
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 10px;
+    color: #111;
 }
 
 .contact .contact-content .left p{
@@ -817,11 +917,34 @@ footer span a:hover{
        
     }
 
+    .right > img{
+        width: 13em;
+        margin-left: 24em;
+    }
+
 }
 
 @media (max-width: 991px){
     .max-width{
         padding: 0 50px;
+    }
+
+    #signature{
+        display: none;
+    }
+
+    .contact{
+        height: fit-content;
+    }
+
+    .portfolio{
+        display: grid;
+        grid-template-columns: 1fr 1fr;      
+        height: fit-content;
+    }
+
+    .about{
+        height: fit-content;
     }
 }
 
@@ -907,6 +1030,24 @@ footer span a:hover{
         width: 100%;
         margin-bottom: 35px;
     }
+
+    #signature{
+        display: none;
+    }
+
+    .contact{
+        height: fit-content;
+    }
+
+    .portfolio{
+        display: grid;
+        grid-template-columns: 1fr 1fr;      
+        height: fit-content;
+    }
+
+    .about{
+        height: fit-content;
+    }
 }
 
 
@@ -931,8 +1072,26 @@ footer span a:hover{
     .skills .skills-content .column{
         width: 100%;
     }
-}
 
+    #signature{
+        display: none;
+    }
+
+    .contact{
+        height: fit-content;
+    }
+
+    .portfolio{
+        display: flex;
+        flex-direction: column;        
+        height: fit-content;
+    }
+
+    .about{
+        height: fit-content;
+    }
+}
+/* Mobile  */
 @media(max-width: 500px){
     .home .home-content .text-2{
         font-size: 50px;
@@ -940,5 +1099,23 @@ footer span a:hover{
     
     .home .home-content .text-3{
         font-size: 27px;
+    }
+
+    #signature{
+        display: none;
+    }
+
+    .about{
+        height: fit-content;
+    }
+
+    .portfolio{
+        display: flex;
+        flex-direction: column;        
+        height: fit-content;
+    }
+
+    .contact{
+        height: fit-content;
     }
 }
