@@ -1073,6 +1073,19 @@ footer span a:hover{
     .about{
         height: fit-content;
     }
+
+    h3{
+        text-align: center;
+    }
+
+    .portfolio-item-tech-stack{
+        align-items: center;
+        justify-content: center;
+    }
+
+    .portfolio-item-repo-link{
+        text-align: center;
+    }
 }
 /* Mobile  */
 @media(max-width: 500px){
@@ -1101,4 +1114,18 @@ footer span a:hover{
     .contact{
         height: fit-content;
     }
+
+    h3{
+        text-align: center;
+    }
+
+    .portfolio-item-tech-stack{
+        align-items: center;
+        justify-content: center;
+    }
+
+    .portfolio-item-repo-link{
+        text-align: center;
+    }
+
 }
