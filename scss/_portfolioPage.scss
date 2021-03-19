@@ -1,0 +1,79 @@
+
+.portfolio_hero_section{
+    width: 100vw;
+    height: fit-content;
+    padding: 0;
+}
+
+.portfolio_hero_section img{
+    width: 100vw
+}
+
+.portfolio_description_section{
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.portfolio-item-individual{
+    width: 80vw;
+    background-color: white;
+}
+
+.portfolio-item-description-wrapper{
+    background-color: #03060c;
+    color: #fff;
+}
+
+.portfolio-item-description-wrapper img{
+margin: 0 auto 0 auto;
+width: 100%;
+margin: 2em 0 2em 0;
+}
+
+.portfolio-item-description{
+    width: 80vw;
+}
+
+.portfolio-item-tech-stack{
+    display: flex;    
+    flex-direction: row;
+    padding: 0;
+}
+
+.portfolio-item-tech-stack li{
+    list-style-type: none;
+   
+}
+
+.portfolio-item-tech-stack img{
+    max-width: 80px;
+    list-style-type: none; 
+    padding: 0;
+}
+
+.portfolio-item-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
+}
+
+.portfolio-item-repo-link {
+    max-width: 1000px;
+    text-transform: uppercase;
+}
+
+.portfolio-item-repo-link h4{
+    margin: 2.5em 0 0.5em 0;
+}
+
+.portfolio-item-repo-link a {
+    color: white;
+    text-decoration: none;
+}
+
+.portfolio-item-repo-link a:hover {
+    color: red;
+}
+

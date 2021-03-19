@@ -1,0 +1,70 @@
+
+/* Services Section Styling */
+.services, .teams{
+    color: #fff;
+    background: #111;
+}
+
+.services .title::before,
+.teams .title::before{
+    background: #fff;
+}
+
+.serv-content{
+    display: flex;
+    flex-direction: row;
+}
+
+.services .serv-content{
+    justify-content: space-evenly;
+}
+
+.services .serv-content .card{
+    width: calc(23% - 20px);
+    height: 15em;
+    background: #222;
+    text-align: center;
+    border-radius: 6px;
+    padding: 20px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.services .serv-content .gmail:hover{
+    background: rgb(213, 29, 29);
+}
+
+.services .serv-content .linkedin:hover{
+    background: rgb(29, 50, 213);
+}
+
+.services .serv-content .github:hover{
+    background: rgb(127, 29, 213);
+}
+
+.services .serv-content .twitter:hover{
+    background: rgb(32, 172, 215);
+}
+
+.services .serv-content .card .box{
+    transition: all 0.3s ease;
+}
+
+.services .serv-content .card:hover .box{
+    transform: scale(1.05);
+}
+
+.services .serv-content .card > i{
+    font-size: 50px;
+    color: var(--sc-primary);
+    transition: all 0.3s ease;
+}
+
+.services .serv-content .card .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+}
