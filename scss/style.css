@@ -528,7 +528,7 @@ footer span a:hover {
 }
 
 /* Mobile  */
-@media (max-width: 500px) {
+@media screen and (max-width: 510px) {
   .home .home-content .text-2 {
     font-size: 50px;
   }
@@ -544,7 +544,6 @@ footer span a:hover {
   .portfolio {
     display: flex;
     flex-direction: column;
-    height: fit-content;
   }
   .contact {
     height: fit-content;
@@ -558,6 +557,14 @@ footer span a:hover {
   }
   .portfolio-item-repo-link {
     text-align: center;
+  }
+  .serv-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .serv-content .card {
+    height: 8em;
+    width: 100%;
   }
 }
 
